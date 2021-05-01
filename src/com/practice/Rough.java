@@ -1,12 +1,23 @@
 package com.practice;
 
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Rough {
 
     public static void main(String[] args) {
+
+
+        List<String> list = Arrays.asList(new String[]{"a", "b"});
+        Stream<String> stream = list.stream().filter(a->a.equals("a"));
+        List<String> st2 = stream.filter(a->a.equals("a")).collect(Collectors.toList());
+        List<String> st3 = stream.filter(a->a.equals("a")).collect(Collectors.toList());
+        ReentrantLock lock = new ReentrantLock();
 
 
         /*StaticTest staticTest = new StaticTest();
